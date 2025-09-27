@@ -20,6 +20,9 @@ public class Image implements Displayable {
     }
     
     public void display(int x, int y, Color color) {
+        if (x >= 0 && x < width && y >= 0 && y < height) {
+            canvas.setRGB(x, y, color.getRGB());
+        }
         System.out.println("🖼️  Image displayed at (" + x + ", " + y + ")");
     }
     
