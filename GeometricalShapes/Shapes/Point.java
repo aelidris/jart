@@ -1,5 +1,54 @@
 package GeometricalShapes.Shapes;
 
-public class Point {
+import GeometricalShapes.Displayable;
+import GeometricalShapes.Drawable;
+import java.awt.Color;
+import java.util.Random;
+
+public class Point implements Drawable {
+
+    public final int x;
+    public final int y;
+    // private final Color color;
+
+    public Point(int x, int y){
+        this.x = x;
+        this.y = y;
+        // this.color = Color.BLACK;
+    }
+
+    @Override
+    public void draw(Displayable displayable){
+        displayable.display(x, y, getColor());
+    }
+
+    @Override
+    public Color getColor(){
+        // return this.color;
+        Random rndNumber = new Random();
+        int r = rndNumber.nextInt(255);
+        int g = rndNumber.nextInt(255);
+        int b = rndNumber.nextInt(255);
+        Color color = new Color(r, g, b);
+        return color;
+    }
+
+    // create random point
+    public static Point random(int width, int height){
+        Random rndNumber = new Random();
+        int x = rndNumber.nextInt(width);
+        int y = rndNumber.nextInt(height);
+        return new Point(x, y);
+    }
+
+    //Getters
+    public int getX(){
+        return this.x;
+    }
+
+    public int getY(){
+        return this.y;
+    }
+
     
 }

@@ -1,3 +1,7 @@
+import GeometricalShapes.*;
+import GeometricalShapes.Rendering.*;
+import GeometricalShapes.Shapes.*;
+
 public class Main {
     public static void main(String[] args) {
         Image image = new Image(1000, 1000);
