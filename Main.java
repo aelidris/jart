@@ -1,8 +1,6 @@
-import GeometricalShapes.*;
 import GeometricalShapes.Rendering.*;
 import GeometricalShapes.Shapes.*;
 import GeometricalShapes.Shapes.Point;
-import java.awt.Color;
 
 public class Main {
     public static void main(String[] args) {
