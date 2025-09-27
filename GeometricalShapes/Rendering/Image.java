@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import GeometricalShapes.*;
 
 public class Image implements Displayable {
     private BufferedImage canvas;
