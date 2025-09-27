@@ -18,12 +18,19 @@ public class Image implements Displayable {
         // store an image in RAM
         canvas = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
     }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
     
     public void display(int x, int y, Color color) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             canvas.setRGB(x, y, color.getRGB());
         }
-        System.out.println("🖼️  Image displayed at (" + x + ", " + y + ")");
     }
     
     public void save(String filename) {
