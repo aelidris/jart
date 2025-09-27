@@ -9,26 +9,26 @@ public class Point implements Drawable {
 
     public final int x;
     public final int y;
-    // private final Color color;
+    private final Color color;
 
     public Point(int x, int y){
         this.x = x;
         this.y = y;
-        // this.color = Color.BLACK;
+        this.color = getColor();
     }
 
     @Override
     public void draw(Displayable displayable){
-        displayable.display(x, y, getColor());
+        displayable.display(x, y, color);
     }
 
     @Override
     public Color getColor(){
         // return this.color;
         Random rndNumber = new Random();
-        int r = rndNumber.nextInt(255);
-        int g = rndNumber.nextInt(255);
-        int b = rndNumber.nextInt(255);
+        int r = rndNumber.nextInt(256);
+        int g = rndNumber.nextInt(256);
+        int b = rndNumber.nextInt(256);
         Color color = new Color(r, g, b);
         return color;
     }
