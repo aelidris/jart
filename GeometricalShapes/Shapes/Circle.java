@@ -24,6 +24,14 @@ public class Circle implements Drawable{
         return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
     }
 
+    // Create a random circle
+    public static Circle random(int width, int height){
+        Random rndNumber = new Random();
+        Point center = Point.random(width, height);
+        int radius = rndNumber.nextInt(width);
+        return new Circle(center, radius);
+    }
+
     // Getters
     public Point getCenter() { return this.center; }
     public int getRadius() {return this.radius;}
