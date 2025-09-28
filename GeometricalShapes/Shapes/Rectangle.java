@@ -15,7 +15,8 @@ public class Rectangle implements Drawable {
         this.color = randomColor();
     }
 
-    private Color randomColor() {
+    // Random Color
+    private Color randomColor(){
         Random rndNumber = new Random();
         return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
     }
@@ -41,10 +42,10 @@ public class Rectangle implements Drawable {
         Point topRight = new Point(x2, y1);
         Point bottomLeft = new Point(x1, y2);
 
-        Line top = new Line(topLeft, topRight);
-        Line right = new Line(topRight, bottomRight);
-        Line bottom = new Line(bottomRight, bottomLeft);
-        Line left = new Line(topLeft, bottomLeft);
+        Line top = new Line(topLeft, topRight, color);
+        Line right = new Line(topRight, bottomRight, color);
+        Line bottom = new Line(bottomRight, bottomLeft, color);
+        Line left = new Line(topLeft, bottomLeft, color);
 
         top.draw(displayable);
         right.draw(displayable);

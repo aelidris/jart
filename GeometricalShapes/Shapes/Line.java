@@ -1,11 +1,10 @@
 package GeometricalShapes.Shapes;
 
-import java.util.Random;
-
 import GeometricalShapes.Displayable;
 import GeometricalShapes.Drawable;
 
 import java.awt.Color;
+import java.util.Random;
 
 public class Line implements Drawable {
     private final Point start;
@@ -18,8 +17,14 @@ public class Line implements Drawable {
         this.color = randomColor();
     }
 
-    // Random Color
-    private Color randomColor() {
+    // Constructor with specified color
+    public Line(Point start, Point end, Color color) {
+        this.start = start;
+        this.end = end;
+        this.color = color;
+    }
+
+    private Color randomColor(){
         Random rndNumber = new Random();
         return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
     }
@@ -36,14 +41,6 @@ public class Line implements Drawable {
     @Override
     public Color getColor() {
         return this.color;
-    }
-
-    // Random Line
-    public static Line random(int width, int height) {
-        Point p1 = Point.random(width, height);
-        Point p2 = Point.random(width, height);
-
-        return new Line(p1, p2);
     }
 
     // Draw
