@@ -18,7 +18,7 @@ public class Cube implements Drawable {
         this.color = randomColor();
     }
 
-     private Color randomColor(){
+    private Color randomColor(){
         Random rndNumber = new Random();
         return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
     }

@@ -20,9 +20,6 @@ public class Rectangle implements Drawable {
         Random rndNumber = new Random();
         return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
     }
-    // private Color randomColor() {
-    //     return Color.WHITE;
-    // }
 
     public Point getTopLeft() {
         return topLeft;

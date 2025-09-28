@@ -1,5 +1,3 @@
-import java.awt.Color;
-
 import GeometricalShapes.Rendering.*;
 import GeometricalShapes.Shapes.*;
 
@@ -12,7 +10,7 @@ public class Main {
         triangle.draw(image);
 
 
-        Line line = new Line(new Point(600, 260), new Point(300,700), Color.WHITE);
+        Line line = new Line(new Point(600, 260), new Point(300,700));
         line.draw(image);
 
         Cube cube = new Cube(new Point(600, 400), 300);

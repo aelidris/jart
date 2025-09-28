@@ -4,17 +4,29 @@ import GeometricalShapes.Displayable;
 import GeometricalShapes.Drawable;
 
 import java.awt.Color;
+import java.util.Random;
 
 public class Line implements Drawable {
     private final Point start;
     private final Point end;
     private final Color color;
 
+    public Line(Point start, Point end) {
+        this.start = start;
+        this.end = end;
+        this.color = randomColor();
+    }
+
     // Constructor with specified color
     public Line(Point start, Point end, Color color) {
         this.start = start;
         this.end = end;
         this.color = color;
+    }
+
+    private Color randomColor(){
+        Random rndNumber = new Random();
+        return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
     }
 
     // Getters
