@@ -10,7 +10,7 @@ public class Main {
         triangle.draw(image);
 
         //Random position
-        Line line = new Line();
+        Line line = new Line(image.getWidth(), image.getHeight());
         //Fix position
         // Line line = new Line(new Point(600, 260), new Point(300,700));
         line.draw(image);
