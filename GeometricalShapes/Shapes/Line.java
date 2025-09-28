@@ -24,6 +24,14 @@ public class Line implements Drawable {
         this.color = color;
     }
 
+    // Constructor for a random position with a random color
+    public Line() {  
+        Random random = new Random();
+        this.start = new Point(random.nextInt(1000), random.nextInt(1000));
+        this.end = new Point(random.nextInt(1000), random.nextInt(1000));
+        this.color = randomColor();
+    }
+
     private Color randomColor(){
         Random rndNumber = new Random();
         return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));

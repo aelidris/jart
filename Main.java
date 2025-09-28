@@ -9,8 +9,10 @@ public class Main {
         Triangle triangle = new Triangle(new Point(100, 100), new Point(900, 900), new Point(100, 900));
         triangle.draw(image);
 
-
-        Line line = new Line(new Point(600, 260), new Point(300,700));
+        //Random position
+        Line line = new Line();
+        //Fix position
+        // Line line = new Line(new Point(600, 260), new Point(300,700));
         line.draw(image);
 
         Cube cube = new Cube(new Point(600, 400), 300);
