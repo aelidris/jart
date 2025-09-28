@@ -20,7 +20,8 @@ public class Line implements Drawable {
 
     // Random Color
     private Color randomColor() {
-        return Color.WHITE;
+        Random rndNumber = new Random();
+        return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
     }
 
     // Getters
