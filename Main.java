@@ -23,7 +23,7 @@ public class Main {
             circle.draw(image);
         }
         Pentagon pen = new Pentagon(new Point(390,400),100);
-        pen.Draw(image);
+        pen.draw(image);
         image.save("image.png");
 
     }

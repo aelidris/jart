@@ -3,9 +3,10 @@ package GeometricalShapes.Shapes;
 
 import java.awt.Color;
 import java.util.Random;
+import GeometricalShapes.Drawable;
 import GeometricalShapes.Displayable;
 
-public class Pentagon {
+public class Pentagon implements Drawable{
     private Point[] p5;
     private Line[] lines5;
     private Color clr;
@@ -27,7 +28,8 @@ public class Pentagon {
         this.lines5[4] = new Line(this.p5[4],this.p5[0]);
     }
 
-    public void Draw(Displayable displayable) {
+    @Override
+    public void draw(Displayable displayable) {
         for (int i = 0;i<5;i++) {
             this.lines5[i].color = this.clr;
             this.lines5[i].draw(displayable);
@@ -37,5 +39,10 @@ public class Pentagon {
     private Color randomColor(){
         Random rndNumber = new Random();
         return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
+    }
+
+    @Override
+    public Color getColor() {
+        return clr;
     }
 }
