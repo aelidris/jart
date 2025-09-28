@@ -3,6 +3,7 @@ package GeometricalShapes.Shapes;
 import GeometricalShapes.Displayable;
 import GeometricalShapes.Drawable;
 import java.awt.Color;
+// import java.awt.Image;
 import java.util.Random;
 
 public class Point implements Drawable {
@@ -17,10 +18,10 @@ public class Point implements Drawable {
         this.color = getColor();
     }
 
-    public Point() {
+    public Point(int width, int height, int z) {
         Random random = new Random();
-        x = random.nextInt(1001);
-        y = random.nextInt(1001);
+        x = random.nextInt(width+1);
+        y = random.nextInt(height+1);
         color = randomColor();
     }
 

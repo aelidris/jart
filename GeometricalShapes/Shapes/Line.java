@@ -27,8 +27,8 @@ public class Line implements Drawable {
     // Constructor for a random position with a random color
     public Line(int width, int height) {  
         Random random = new Random();
-        this.start = new Point(random.nextInt(width), random.nextInt(height));
-        this.end = new Point(random.nextInt(width), random.nextInt(height));
+        this.start = new Point(random.nextInt(width+1), random.nextInt(height+1));
+        this.end = new Point(random.nextInt(width+1), random.nextInt(height+1));
         this.color = randomColor();
     }
 
