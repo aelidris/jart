@@ -17,9 +17,14 @@ public class Triangle implements Drawable {
         this.color = randomColor();
     }
 
-    private Color randomColor() {
-        return Color.WHITE;
+    // Random Color
+    private Color randomColor(){
+        Random rndNumber = new Random();
+        return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
     }
+    // private Color randomColor() {
+    //     return Color.WHITE;
+    // }
 
     public Point getA() {
         return a;
@@ -38,9 +43,9 @@ public class Triangle implements Drawable {
     }
 
     public void draw(Displayable displayable) {
-        Line ab = new Line(a, b);
-        Line bc = new Line(b, c);
-        Line ca = new Line(c, a);
+        Line ab = new Line(a, b, color);
+        Line bc = new Line(b, c, color);
+        Line ca = new Line(c, a, color);
 
         ab.draw(displayable);
         bc.draw(displayable);
