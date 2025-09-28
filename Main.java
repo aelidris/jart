@@ -9,7 +9,6 @@ public class Main {
         Triangle triangle = new Triangle(new Point(100, 100), new Point(900, 900), new Point(100, 900));
         triangle.draw(image);
         Point p = new Point();
-        System.out.printf("1:%d  2 : %d",p.x,p.y);
         p.draw(image);
 
         //Random position
