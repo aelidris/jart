@@ -15,6 +15,7 @@ public class Pentagon {
         this.p5 = new Point[5];
         this.clr = randomColor();
         double angle = 2 * Math.PI / 5;
+        //generate all 5 cord
         for (int i = 0; i< 5; i++) {
             double tht = i * angle - Math.PI / 2;
             this.p5[i] = new Point((int)(ctr.x + r * Math.cos(tht)), (int)(ctr.y + r * Math.sin(tht)));
