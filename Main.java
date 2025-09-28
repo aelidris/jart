@@ -8,7 +8,7 @@ public class Main {
         rectangle.draw(image);
         Triangle triangle = new Triangle(new Point(100, 100), new Point(900, 900), new Point(100, 900));
         triangle.draw(image);
-        Point p = new Point(image.getWidth(), image.getHeight(), 0);
+        Point p = Point.random(image.getWidth(), image.getHeight());
         p.draw(image);
 
         //Random position

@@ -18,13 +18,6 @@ public class Point implements Drawable {
         this.color = getColor();
     }
 
-    public Point(int width, int height, int z) {
-        Random random = new Random();
-        x = random.nextInt(width+1);
-        y = random.nextInt(height+1);
-        color = randomColor();
-    }
-
     @Override
     public void draw(Displayable displayable){
         displayable.display(x, y, color);
@@ -41,10 +34,6 @@ public class Point implements Drawable {
         return color;
     }
 
-    private Color randomColor(){
-        Random rndNumber = new Random();
-        return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
-    }
     // create random point
     public static Point random(int width, int height){
         Random rndNumber = new Random();
