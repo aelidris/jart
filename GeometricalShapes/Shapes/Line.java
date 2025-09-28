@@ -24,6 +24,14 @@ public class Line implements Drawable {
         this.color = color;
     }
 
+    // Constructor for a random position with a random color
+    public Line(int width, int height) {  
+        Random random = new Random();
+        this.start = new Point(random.nextInt(width), random.nextInt(height));
+        this.end = new Point(random.nextInt(width), random.nextInt(height));
+        this.color = randomColor();
+    }
+
     private Color randomColor(){
         Random rndNumber = new Random();
         return new Color(rndNumber.nextInt(256), rndNumber.nextInt(256), rndNumber.nextInt(256));
@@ -45,32 +53,27 @@ public class Line implements Drawable {
 
     // Draw
     @Override
-    public void draw(Displayable displayable) {
-        // Bresenham's line algorithm
-        int x1 = start.getX();
-        int y1 = start.getY();
-        int x2 = end.getX();
-        int y2 = end.getY();
+    public void draw(Displayable canvas) {
+        int startX = start.getX();
+        int startY = start.getY();
+        int endX = end.getX();
+        int endY = end.getY();
 
-        int dx = Math.abs(x2 - x1);
-        int dy = Math.abs(y2 - y1);
-        int sx = (x1 < x2) ? 1 : -1;
-        int sy = (y1 < y2) ? 1 : -1;
-        int err = dx - dy;
+        float deltaX = endX - startX;
+        float deltaY = endY - startY;
 
-        while (true) {
-            displayable.display(x1, y1, color);
-            if (x1 == x2 && y1 == y2)
-                break;
-            int e2 = 2 * err;
-            if (e2 > -dy) {
-                err -= dy;
-                x1 += sx;
-            }
-            if (e2 < dx) {
-                err += dx;
-                y1 += sy;
-            }
+        int totalSteps = (int) Math.max(Math.abs(deltaX), Math.abs(deltaY));
+
+        float stepX = deltaX / totalSteps;
+        float stepY = deltaY / totalSteps;
+
+        float currentX = startX;
+        float currentY = startY;
+
+        for (int i = 0; i <= totalSteps; i++) {
+            canvas.display(Math.round(currentX), Math.round(currentY), color);
+            currentX += stepX;
+            currentY += stepY;
         }
     }
 
