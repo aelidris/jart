@@ -20,6 +20,8 @@ public class Main {
             Circle circle = Circle.random(image.getWidth(), image.getHeight());
             circle.draw(image);
         }
+        Pentagon pen = new Pentagon(new Point(390,400),100);
+        pen.Draw(image);
         image.save("image.png");
 
     }

@@ -9,7 +9,7 @@ import java.util.Random;
 public class Line implements Drawable {
     private final Point start;
     private final Point end;
-    private final Color color;
+    public Color color;
 
     public Line(Point start, Point end) {
         this.start = start;
